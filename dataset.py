@@ -51,7 +51,7 @@ class CustomImageMaskDataset(Dataset):
         if self.target_transform:
             label = self.target_transform(label)
 
-        return image, label
+        return {"image": image, "mask": label, "filename": image_name}
 
 
 def generate_dataset(root):
